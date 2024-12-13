@@ -868,34 +868,38 @@ $(document).ready(() => {
 // Función para enviar el formulario
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.seccion7 #ajax-contact');
-  if (form) {  // Verifica que el formulario exista
+  if (form) { // Verifica que el formulario exista
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       const formData = new FormData(this);
 
-      fetch('https://formsubmit.co/francisconoriegaret15@gmail.com', {
+      fetch('https://formsubmit.co/ajax/francisconoriegaret15@gmail.com', {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
       })
-        .then(response => {
-          if (response.ok) {
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
             alert('Message sent successfully!');
-            this.reset();
+            form.reset();
           } else {
             alert('Error sending message.');
+            console.log(data);
           }
         })
-        .catch(() => {
+        .catch(error => {
           alert('Error sending message.');
+          console.error(error);
         });
     });
   } else {
     console.log('Formulario no encontrado.');
   }
 
-  
-  
   // Observer de intersección para SECCION 7
   const section = document.querySelector('.seccion7');
   if (section) {
