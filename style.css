@@ -147,7 +147,7 @@ height:50vh;
     }
 
     .seccion1 h2 {
-        font-size: 2vmin; /* Reducir tamaño del encabezado */
+        font-size: 5vmin; /* Reducir tamaño del encabezado */
     }
 
     .seccion1 .text-box {
@@ -1850,4 +1850,16 @@ right: 0vw;
 .seccion7 button[type="submit"]:hover {
     background-color: darkred; /* Cambio de color al pasar el mouse */
     transform: scale(1.5); /* Efecto de aumento al hacer hover */
+}
+
+button.success {
+  background-color: #28a745; /* Verde */
+  color: #fff;
+  border-color: #28a745;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.success:hover {
+  background-color: #218838;
+  transform: scale(1.05); /* Un ligero aumento de tamaño */
 }
