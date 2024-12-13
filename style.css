@@ -120,7 +120,7 @@ height:50vh;
 
 /* Encabezado */
 .seccion1 h2 {
-    font-size: clamp(1.5rem, 4vw, 3.5rem); /* Tamaño adaptable */
+    font-size: clamp(1.5rem, 5vmin, 5vmin); /* Tamaño adaptable */
     margin-bottom: clamp(10px, 2vh, 20px); /* Espaciado dinámico */
     font-weight: bold;
     margin: 0;
@@ -129,7 +129,7 @@ height:50vh;
 /* Caja de texto */
 .seccion1 .text-box {
     width: clamp(70%, 80%, 90%); /* Ajuste proporcional al ancho del contenedor */
-    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Tamaño de texto adaptable */
+    font-size: clamp(0.8rem, 3vmin, 2vmin); /* Tamaño de texto adaptable */
     line-height: 1.5;
     text-align: center;
     margin: 0 auto;
@@ -147,7 +147,7 @@ height:50vh;
     }
 
     .seccion1 h2 {
-        font-size: 1.5rem; /* Reducir tamaño del encabezado */
+        font-size: 2vmin; /* Reducir tamaño del encabezado */
     }
 
     .seccion1 .text-box {
@@ -174,7 +174,7 @@ height:50vh;
 
 /* Título */
 .seccion1-2 h2 {
-    font-size: 1.4rem; /* Ajuste más estándar */
+    font-size: 3vmin; /* Ajuste más estándar */
     margin: 0;
     padding: 0;
     margin-bottom: 1rem;
@@ -204,11 +204,11 @@ height:50vh;
 
 /* Botones */
 .seccion1-2 .button {
-    min-width: 300px; /* Ancho mínimo más compacto */
-    min-height: 60px; /* Altura mínima más compacta */
+    min-width: 30vmin; /* Ancho mínimo más compacto */
+    min-height: 4vmin; /* Altura mínima más compacta */
     display: inline-flex;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem; /* Tamaño reducido para adaptarse mejor */
+    font-size: 2vmin; /* Tamaño reducido para adaptarse mejor */
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
@@ -240,7 +240,7 @@ height:50vh;
     }
 
     .seccion1-2 h2 {
-        font-size: 0.8rem; /* Tamaño más pequeño del título */
+        font-size: 3vmin; /* Tamaño más pequeño del título */
         margin-bottom: 0.7rem;
     }
 
@@ -276,13 +276,13 @@ height:50vh;
 }
 
 .seccion1-3 h2 {
-    font-size: 1.4rem;
+    font-size: 3vmin;
     margin: 0;
     padding: 0.5rem;
 }
 
 .seccion1-3 p {
-    font-size: 1rem;
+    font-size: 3vmin;
     max-width: 90%; /* Mejor ajuste en pantallas pequeñas */
     margin: 0 auto;
     line-height: 1.5;
@@ -462,9 +462,9 @@ height:50vh;
 }
 
 .seccion2-3 h2{
-  font-size:3.5rem;
-  margin-top:2rem;
-  margin-bottom:1.2rem;
+  font-size:5vmin;
+  margin-top:2vmin;
+  margin-bottom:2vmin;
       transform: translateY(-8vh);
     margin-left: 4vw;
 
@@ -616,7 +616,7 @@ height:50vh;
     width: 15vmin; /* Cambiado a 100px para un botón cuadrado */
     height: 15vmin; /* Cambiado a 100px para un botón cuadrado */
     position: relative;
-    font-size: 1rem;
+    font-size: 1.5vmin;
     z-index: 1;
     border-radius: 0.8rem;
     overflow: hidden;
