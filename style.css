@@ -1,0 +1,1853 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  
+  box-sizing: border-box;
+  
+}
+
+/* Ajustes globales */
+.seccion0 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.seccion0 {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.seccion0 img.custom-image {
+    width: 100vw; /* Imagen proporcional al ancho del viewport */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Navbar section */
+.seccion0 .nav {
+    width: 100%;
+    height: 8vh; /* Altura proporcional al viewport */
+    position: absolute; /* Mantenerlo sobre la imagen */
+    top: 0; /* Fijarlo al tope de la página */
+    line-height: 8vh; /* Alineación vertical proporcional */
+    text-align: center;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    background-color: transparent; /* Fondo transparente inicialmente */
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 768px) {
+/* Navbar section */
+.seccion0 .nav {
+    width: 93%;
+}}
+
+.seccion0 .scrolled .nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+/* Logo */
+.seccion0 .nav div.logo {
+    float: left;
+    padding-left: 2vw; /* Espaciado proporcional al viewport */
+}
+
+.seccion0 .nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 3vmin; /* Fuente proporcional */
+}
+
+.seccion0 .nav div.logo a:hover {
+    color: #00E676;
+}
+
+/* Menú principal */
+.seccion0 .nav div.main_list {
+    height: 8vh;
+    float: right;
+}
+
+.seccion0 .nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.seccion0 .nav div.main_list ul li {
+    height: 8vh;
+    padding-right: 3vw; /* Espaciado proporcional */
+}
+
+.seccion0 .nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5vmin; /* Fuente proporcional */
+    line-height: 8vh; /* Alineación vertical */
+}
+
+.seccion0 .nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+
+
+
+/* seccion1 */
+
+/* Sección principal */
+.seccion1 {
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    display: flex; /* Usamos flexbox para alinear contenido */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+height:50vh;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0 5vw; /* Margen interno dinámico para evitar desbordamientos */
+}
+
+/* Encabezado */
+.seccion1 h2 {
+    font-size: clamp(1.5rem, 4vw, 3.5rem); /* Tamaño adaptable */
+    margin-bottom: clamp(10px, 2vh, 20px); /* Espaciado dinámico */
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Caja de texto */
+.seccion1 .text-box {
+    width: clamp(70%, 80%, 90%); /* Ajuste proporcional al ancho del contenedor */
+    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Tamaño de texto adaptable */
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 auto;
+    white-space: pre-wrap; /* Conserva los saltos de línea */
+    background: transparent;
+    border: none; /* Sin bordes */
+    padding: 10px; /* Espaciado interno para mejorar legibilidad */
+}
+
+/* Media queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .seccion1 {
+        height: auto; /* Ajustar altura en pantallas pequeñas */
+        padding: 5vh 3vw; /* Más espacio en vertical */
+    }
+
+    .seccion1 h2 {
+        font-size: 1.5rem; /* Reducir tamaño del encabezado */
+    }
+
+    .seccion1 .text-box {
+        width: 90%; /* Más espacio horizontal */
+        font-size: 0.8rem; /* Reducir tamaño del texto */
+    }
+}
+
+
+/* Sección principal */
+.seccion1-2 {
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh; /* Altura fija */
+    box-sizing: border-box;
+    text-align: center;
+    background-color: lightgrey;
+    padding: 2vh 5vw; /* Espaciado interno */
+}
+
+/* Título */
+.seccion1-2 h2 {
+    font-size: 1.4rem; /* Ajuste más estándar */
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+/* Contenedor de botones */
+.seccion1-2 .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaciado fijo entre botones */
+    margin-top: 6vh; /* Espaciado superior ajustado */
+}
+@media screen and (max-width: 768px) {
+  .seccion1-2 {    min-height: auto; /* Altura fija */}
+  
+.seccion1-2 .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+    gap: 20px; /* Espaciado entre los botones */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    margin-top: 2vh;
+  margin-bottom:1vh;
+}}
+
+
+/* Botones */
+.seccion1-2 .button {
+    min-width: 300px; /* Ancho mínimo más compacto */
+    min-height: 60px; /* Altura mínima más compacta */
+    display: inline-flex;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem; /* Tamaño reducido para adaptarse mejor */
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    color: #000000;
+    background: transparent;
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 8px 16px; /* Espaciado interno más proporcional */
+}
+
+/* Efecto hover */
+.seccion1-2 .button:hover {
+    color: #ffffff;
+    background: #A020F0;
+    transform: translateY(-5px); /* Sutil movimiento */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 720px) {
+    .seccion1-2 {
+        height: auto; /* Altura ajustada para pantallas pequeñas */
+        padding: 2vh 3vw; /* Reducir espaciado interno */
+    }
+
+    .seccion1-2 h2 {
+        font-size: 0.8rem; /* Tamaño más pequeño del título */
+        margin-bottom: 0.7rem;
+    }
+
+    .seccion1-2 .button {
+        min-width: 90px; /* Botones más pequeños pero legibles */
+        min-height: 35px;
+        font-size: 0.7rem; /* Reducir tamaño de fuente */
+        padding: 6px 4px; /* Ajuste del espaciado interno */
+    }
+}
+
+/* seccion1-3 */
+
+.seccion1-3 {
+    position: relative;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+
+    box-sizing: border-box;
+    text-align: center;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+   height: 20vh; /* Ajuste para pantallas pequeñas */
+}
+
+@media (max-width: 720px) {
+    .seccion1-3 {
+        height: auto; /* Ajuste para pantallas pequeñas */
+    }
+}
+
+.seccion1-3 h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.seccion1-3 p {
+    font-size: 1rem;
+    max-width: 90%; /* Mejor ajuste en pantallas pequeñas */
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+.seccion1-3 h2 {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0.5rem;
+}}
+
+
+/* Estilo para el elemento "mouse-scroll" */
+
+#mouse-scroll {
+    position: relative;
+    left: 50%;
+    top: calc(100% - 50px); /* Posición ajustada para que no obstruya el contenido */
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mouse-scroll span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin: 5px 0;
+}
+
+#mouse-scroll .mouse {
+    height: 25px;
+    width: 16px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    position: relative;
+}
+
+#mouse-scroll .mouse-in {
+    height: 5px;
+    width: 2px;
+    background: #000;
+    margin: 5px auto;
+    animation: animated-mouse 1.2s ease infinite;
+}
+
+/* Animaciones */
+@keyframes animated-mouse {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#mouse-scroll .down-arrow-1,
+#mouse-scroll .down-arrow-2,
+#mouse-scroll .down-arrow-3 {
+    animation: mouse-scroll 1s infinite;
+}
+
+#mouse-scroll .down-arrow-1 {
+    animation-delay: 0.1s;
+}
+
+#mouse-scroll .down-arrow-2 {
+    animation-delay: 0.2s;
+}
+
+#mouse-scroll .down-arrow-3 {
+    animation-delay: 0.3s;
+}
+
+
+
+@media (max-width: 720px) {
+  
+#mouse-scroll {
+    position: relative;
+    left: 50%;
+    top: calc(100% - 50px); /* Posición ajustada para que no obstruya el contenido */
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  margin-bottom: 1rem;
+  }
+#mouse-scroll span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin: 5px 0;
+}
+
+#mouse-scroll .mouse {
+    height: 25px;
+    width: 16px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    position: relative;
+}}
+
+
+/* seccion2-2 */
+
+.seccion2-2 {
+    overflow: hidden;
+   font-family: "Poppins", sans-serif;
+  justify-content: center;
+
+  box-sizing: border-box;
+    text-align: center;
+  align-content: center;
+  background-color:transparent;
+  
+  
+}
+@media (max-width: 720px) {
+    .seccion2-2 {
+        height: auto;
+    }
+}
+
+.seccion2-2 img.sobremi {
+    width: 100vw; /* La imagen ocupará el 50% del ancho de su contenedor */
+    height: auto; /* Mantiene la proporción */
+}
+
+
+/* seccion2-3 */
+
+.seccion2-3 {
+
+
+   font-family: "Poppins", sans-serif;
+  justify-content: center;
+    height: 50vh; 
+  box-sizing: border-box;
+   
+  align-content: center;
+
+}
+
+@media (max-width: 720px) {
+    .seccion2-3 {
+        height: auto;
+    }
+  
+  
+}
+
+.seccion2-3 h2{
+  font-size:3.5rem;
+  margin-top:2rem;
+  margin-bottom:1.2rem;
+      transform: translateY(-8vh);
+    margin-left: 4vw;
+
+  font-weight:bold;
+
+}
+
+.seccion2-3 .button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente */
+    gap: 1rem; /* Espacio entre los botones */
+    margin-top: 2rem; /* Margen superior para separación del título */
+
+}
+
+@media (max-width: 720px) {
+.seccion2-3 h2{
+  font-size:1.5rem;
+  margin-top:4rem;
+  margin-bottom:-2.8rem;
+      transform: translateY(-8vh);
+    margin-left: 4vw;
+
+  font-weight:bold;
+
+}
+  .seccion2-3 .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; /* Centra los botones horizontalmente */
+    justify-items: center; /* Centra los botones verticalmente */
+    gap: 1rem; /* Espacio entre los botones */
+    margin-top: 2rem; /* Margen superior para separación del título */
+      margin-bottom:2rem;
+}
+  
+}
+
+.shiny-button {
+    position: relative;
+    /* Tu configuración de fondo y otros estilos */
+}
+
+.shiny-button.enlace1 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 3vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace2 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 6vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace3 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 6vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace4 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 8vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+
+@media (max-width: 720px) {
+  .seccion2-3 .background {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top, rgb(67, 76, 100), rgb(48, 49, 51)),
+                radial-gradient(ellipse at bottom, rgb(89, 69, 89), rgb(107, 139, 174));
+}
+  
+  .shiny-button.enlace1 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 6vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace2 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 12vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace3 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 12vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+
+.shiny-button.enlace4 .button-image {
+    position: absolute;
+    bottom: 1vmin; /* Ajusta según necesites */
+    right: 2vmin; /* Ajusta según necesites */
+    width: 18vmin; /* Ajusta el tamaño */
+    height: auto;
+    pointer-events: none; /* Para que no interfiera con el clic del botón */
+}
+  }
+
+.seccion2-3 .background {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top, rgb(67, 76, 100), rgb(48, 49, 51)),
+                radial-gradient(ellipse at bottom, rgb(89, 69, 89), rgb(107, 139, 174));
+}
+
+.seccion2-3 article {
+    width: 100%;
+    height: 100%;
+    min-height: 40rem;
+    background: linear-gradient(45deg, rgb(86, 84, 83), rgb(86, 84, 103));
+    box-shadow: inset 0 0 1.4rem rgb(56, 56, 58);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion2-3 .shiny-button {
+    margin: 1rem;
+    padding: 1.3rem;
+    width: 15vmin; /* Cambiado a 100px para un botón cuadrado */
+    height: 15vmin; /* Cambiado a 100px para un botón cuadrado */
+    position: relative;
+    font-size: 1rem;
+    z-index: 1;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0rem 0.25rem 0.25rem rgb(45, 50, 58);
+    cursor: pointer;
+    transition: all 200ms ease;
+   text-decoration: none; /* Quita el subrayado */
+}
+
+@media (max-width: 720px) {
+.seccion2-3 .shiny-button {
+    margin: 0.2rem;
+    padding: 1.3rem;
+    width: 30vmin; /* Cambiado a 100px para un botón cuadrado */
+    height: 30vmin; /* Cambiado a 100px para un botón cuadrado */
+    position: relative;
+    font-size: 1rem;
+    z-index: 1;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0rem 0.25rem 0.25rem rgb(45, 50, 58);
+    cursor: pointer;
+    transition: all 200ms ease;
+   text-decoration: none; /* Quita el subrayado */
+}}
+
+.seccion2-3 .shiny-button:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el mouse */
+    box-shadow: 0rem 0.5rem 0.5rem rgb(45, 50, 58); /* Cambia la sombra en hover */
+}
+
+.seccion2-3 .shiny-button p {
+    margin: 0;
+    text-shadow: 0 0.2rem 0.2rem rgb(200, 222, 237);
+  color:white;
+  font-size:1.4vmin;
+}
+
+@media (max-width: 720px) {
+.seccion2-3 .shiny-button p {
+    margin: 0;
+    text-shadow: 0 0.2rem 0.2rem rgb(200, 222, 237);
+  color:white;
+  font-size:2.5vmin;
+}}
+
+.seccion2-3 canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+/* seccion2 */
+.seccion2 {
+  width: 100%;
+  height: 100vh; /* Altura completa de la ventana */
+  display: grid;
+  font-family: 'Poppins', sans-serif;
+  place-items: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  position: relative; /* Posicionamiento relativo para contener los elementos absolutos */
+  overflow:hidden;
+}
+
+.seccion2 .item {
+  width: 200px;
+  height: 300px;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+  transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+}
+
+.seccion2 .item:nth-child(1),
+.seccion2 .item:nth-child(2) {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.seccion2 .item:nth-child(3) { left: 50%; }
+.seccion2 .item:nth-child(4) { left: calc(50% + 220px); }
+.seccion2 .item:nth-child(5) { left: calc(50% + 440px); }
+.seccion2 .item:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+
+.seccion2 .content {
+  width: min(30vw, 400px);
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  font: 400 0.85rem  'Poppins', sans-serif;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: none;
+}
+
+.seccion2 .content .title {
+  font-family: 'Poppins';
+font-size:3rem;
+  font-weight:bold;
+}
+
+.seccion2 .content .description {
+  line-height: 1.7;
+  margin: 1rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+.seccion2 .content button {
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border: 2px solid white;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.seccion2 .item:nth-of-type(2) .content {
+  display: block;
+  animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+@keyframes show {
+  0% {
+    filter: blur(5px);
+    transform: translateY(calc(-50% + 75px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.seccion2 .nav {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  user-select: none;
+}
+
+.seccion2 .nav .btn {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  margin: 0 0.25rem;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.seccion2 .nav .btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Media queries corregidas */
+@media (min-width: 650px) and (max-width: 900px) {
+ .seccion2 .content .title {
+    font-size: 1rem;
+  }
+ .seccion2 .content .description {
+    font-size: 0.7rem;
+  }
+  .seccion2 .content button {
+    font-size: 0.7rem;
+  }
+  .seccion2 .item {
+    width: 160px;
+    height: 270px;
+  }
+  .seccion2 .item:nth-child(3) { left: 50%; }
+  .seccion2 .item:nth-child(4) { left: calc(50% + 170px); }
+  .seccion2 .item:nth-child(5) { left: calc(50% + 340px); }
+  .seccion2 .item:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+}
+
+@media (max-width: 650px) {
+  .seccion2 .content .title {
+    font-size: 4vmin;
+  }
+  .seccion2 .content .description {
+    font-size: 0.75rem;
+  }
+  .seccion2 .content button {
+    font-size: 0.7rem;
+  }
+  .seccion2 .item {
+    width: 130px;
+    height: 220px;
+  }
+  .seccion2 .item:nth-child(3) { left: 50%; }
+  .seccion2 .item:nth-child(4) { left: calc(50% + 140px); }
+  .seccion2 .item:nth-child(5) { left: calc(50% + 280px); }
+  .seccion2 .item:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+}
+
+
+/* Contenedor de los filtros */
+.filtros {
+  display: flex;
+  align-items: left;
+  gap: 30px;
+  padding: 20px;
+  background-color: #f4f7fb; /* Fondo suave */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', Poppins, Poppins, Poppins, sans-serif;
+}
+
+@media (max-width: 720px) {
+/* Contenedor de los filtros */
+.filtros {
+ display: block;
+  align-items: left;
+  gap: 30px;
+  padding: 20px;
+  background-color: #f4f7fb; /* Fondo suave */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', Poppins, Poppins, Poppins, sans-serif;
+}}
+
+/* Estilo para el texto "Filtrar por:" */
+.filtro-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Contenedor de cada select */
+.select-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para los selects */
+select {
+  padding: 12px 18px;
+  font-size: 14px;
+  border: 1px solid #d1d8e0;  /* Borde suave */
+  border-radius: 6px;
+  background-color: #fff;
+  color: #555;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efecto de enfoque (focus) en el select */
+select:focus {
+  border-color: #6c63ff; /* Color más vibrante */
+  outline: none;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+}
+
+/* Estilo de las opciones dentro del select */
+option {
+  padding: 12px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #555;
+}
+
+/* Efecto hover en las opciones (solo para mejorar la experiencia de usuario) */
+select option:hover {
+  background-color: #f0f4f8;
+}
+
+
+
+/*SECCION3*/
+
+.seccion3 {
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    align-content: center;
+    position: relative;
+   background-size: cover;          /* Para que el fondo cubra todo el área */
+  background-position: center;     /* Centrar la imagen */
+  background-transition: background-image 0.5s ease-in-out;  /* Animación suave de cambio de fondo */
+  z-index:2;
+}
+
+.seccion3 .panal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vmin; /* Para centrar verticalmente */
+  z-index:2;
+}
+
+
+/* Estilo para el título */
+.seccion3 h2 {
+position:relative;
+  font-size: 3rem;
+  font-weight:bold;
+  color: #333;
+    top:4rem;
+  z-index:2;
+  
+
+ font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo para el párrafo */
+.seccion3 p {
+  position:relative;
+  font-size: 1.2rem;
+  top:5rem;
+  color: #666;
+  margin-bottom: 30px;
+ font-family: 'Poppins', sans-serif;
+  z-index:2;
+}
+
+/* Estilos para las filas de hexágonos */
+.seccion3 .hex-row {
+    display: flex;
+    justify-content: center;
+    gap: 7vmin; /* Espacio entre los hexágonos proporcional a la pantalla */
+  z-index:2;
+}
+
+/* Estilos para los hexágonos */
+.seccion3 .hex {
+    width: 7vmin; /* Ancho proporcional */
+    height: 7vmin; /* Alto proporcional */
+    background-color: rgba(192, 192, 192, 0.5); /* Color gris con 50% de transparencia */
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s; /* Animación al hacer hover */;
+  z-index:2;
+}
+
+.seccion3 .hex:hover {
+    transform: scale(1.8); /* Aumenta el hexágono al pasar el mouse */
+}
+
+/* Icono dentro de los hexágonos */
+.seccion3 .hex img {
+    width: 50%; /* Ajuste del tamaño del icono proporcional al hexágono */
+    height: auto;
+    object-fit: contain; /* Asegura que la imagen se ajuste al tamaño */
+    pointer-events: none; /* Evita que el clic afecte el icono */
+}
+
+/* Estilos para los botones dinámicos (solo imagen, sin fondo ni bordes) */
+
+.dynamic-button {
+    background-color: transparent; /* Sin fondo */
+    border: none; /* Sin bordes */
+    padding: 0; /* Sin relleno */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    opacity: 0; /* Inicialmente oculto */
+    position: absolute;
+    transform: translateY(-5px); /* Posición inicial para animación */
+    transition: transform 0.5s ease, opacity 0.3s ease; /* Animación de entrada */
+}
+
+.dynamic-button img {
+    width: 80px; /* Tamaño de la imagen del botón, ajusta según necesites */
+    height: auto;
+    pointer-events: none; /* Evitar que el clic afecte la imagen */
+}
+
+/* Mostrar los botones con animación */
+.dynamic-button.show {
+    opacity: 1; /* Hacer visible el botón */
+    transform: translateY(0); /* Restablecer posición */
+}
+
+/* Efecto hover en los botones (si necesitas hover, pero solo para la imagen) */
+.dynamic-button:hover {
+    transform: translateY(-10px); /* Eleva el botón al pasar el mouse */
+}
+
+.dynamic-button:hover img {
+    opacity: 0.8; /* Reducir opacidad de la imagen al hacer hover */
+}
+
+/* Estilo para la sección de fondo */
+.seccion3 .seccion-background {
+    transition: background-image 0.5s ease-in-out; /* Transición suave */
+    height: 100%; /* Asegúrate de que la sección ocupe todo el espacio */
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+}
+
+
+@media (max-width: 720px) {
+/* Estilos para los hexágonos */
+.seccion3 .hex {
+    width: 13vmin; /* Ancho proporcional */
+    height: 11.5vmin; /* Alto proporcional */
+    background-color: rgba(192, 192, 192, 0.5); /* Color gris con 50% de transparencia */
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s; /* Animación al hacer hover */;
+  z-index:2;
+}
+
+.seccion3 .panal {
+display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 2;
+}}
+
+/* Seccion 4 */
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+:root {
+  --color-bg1: rgb(8, 10, 15);
+  --color-bg2: rgb(0, 17, 32);
+  --color1: 18, 113, 255;
+  --color2: 107, 74, 255;
+  --color3: 100, 100, 255;
+  --color4: 50, 160, 220;
+  --color5: 80, 47, 122;
+  --color-interactive: 140, 100, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+/* Reseteo de estilos */
+.seccion4 * {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #FFF; /* Color del texto en blanco */
+  background: transparent;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+
+.seccion4 {
+  font-family: 'Poppins', sans-serif; /* Fuente general */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative; /* Posicionamiento relativo para hijos absolutos */
+  background: #000; /* Color de fondo oscuro para mejorar el contraste */
+  overflow: hidden; /* Evitar que los elementos salgan de la sección */
+}
+
+.seccion4 h1, .seccion4 h2, .seccion4 h3 {
+  font-family: 'Poppins', sans-serif; /* Fuente para los encabezados */
+  font-weight: 700;
+  color: #FFF; /* Color blanco para los encabezados */
+}
+
+.seccion4 .card {
+  position: absolute; /* Posicionamiento absoluto para centrar la tarjeta */
+  z-index: 2; /* Asegúrate de que esté por encima de otros elementos */
+  top: 50%;
+
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra la tarjeta */
+  user-select: none;
+
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 90px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+  overflow: hidden; /* Evitar desbordamiento */
+}
+
+@media (max-width: 720px) {
+.seccion4 .card {
+width:72vw
+}}
+
+.seccion4 .card:before {
+  content: "";
+  position: absolute;
+  z-index: 2; /* Asegúrate de que esté detrás del contenido */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Ajuste de altura */
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 34%, rgba(255, 255, 255, 1) 89%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.3; /* Opacidad del efecto */
+  filter: blur(0.5px);
+  mix-blend-mode: hard-light; /* Mezcla de modo de capa */
+}
+
+.seccion4 .noise {
+  position: absolute; /* Ajustar para cubrir toda la sección */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1; /* Detrás de la tarjeta */
+  opacity: 0.1; /* Opacidad del ruido */
+}
+
+.seccion4 .content {
+  position: relative;
+  z-index: 2; /* Por encima de la capa de ruido */
+  text-shadow: -3px 0px 2px rgba(0, 0, 0, 0.1); /* Sombra de texto */
+}
+
+.seccion4 h1 {
+  font-size: 6vmin; /* Tamaño de fuente relativo al ancho de la pantalla */
+  margin-bottom: 2vh; /* Espacio inferior relativo a la altura de la pantalla */
+}
+
+.seccion4 h2 {
+  font-size: 2vw; /* Tamaño de fuente para h2 */
+  margin-bottom: 1.5vh; /* Espacio inferior relativo */
+}
+
+.seccion4 h3 {
+  font-size: 1.5vw; /* Tamaño de fuente para h3 */
+  margin-bottom: 1vh; /* Espacio inferior relativo */
+}
+
+.seccion4 p {
+  line-height: 1.6; /* Altura de línea */
+  font-size: 3.5vmin; /* Tamaño de fuente relativo para el párrafo */
+  color: #FFF; /* Color del texto */
+}
+
+
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+
+.seccion4 .gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: 0;
+ }
+
+  .svgBlur {
+    display: none;
+  }
+
+  .noiseBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    mix-blend-mode: soft-light;
+    opacity: 0.3;
+  }
+  .gradients-container {
+    filter: url(#goo) blur(40px) ;
+    width: 100%;
+    height: 100%;
+  }
+
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+  }
+
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+  }
+
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+  }
+
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+  }
+
+ .g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+  }
+
+.seccion4 .interactive {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+
+    opacity: 0.7;
+  }
+}
+
+
+
+
+/*SECCION5*/
+.seccion5 {}
+.seccion5 {
+    display: none;
+    flex-direction: column; /* Cambia a columna para apilar elementos verticalmente */
+    justify-content: center; /* Centra todo el contenido verticalmente */
+    align-items: center;     /* Centra todo el contenido horizontalmente */
+    min-height: 100vh;       /* Ocupa toda la altura de la ventana */
+}
+
+.seccion5 h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;      /* Centra el texto horizontalmente */
+    margin-bottom: 0.5rem;   /* Espacio entre el título y el párrafo */
+}
+
+.seccion5 p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;      /* Centra el texto horizontalmente */
+    margin-bottom: 2rem;     /* Espacio entre el párrafo y el card */
+}
+
+@media (max-width: 720px) {
+.seccion5 p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;      /* Centra el texto horizontalmente */
+    margin-bottom: 2rem;     /* Espacio entre el párrafo y el card */
+  padding:2px;
+}}
+
+.seccion5 .card {
+    width: 90vw;
+    height: calc(12 / 16 * 70vw);
+    max-width: calc(16 / 9 * 70vh);
+    max-height: 70vh;
+    display: flex;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1613479/inception.jpg') center center / cover;
+    overflow: hidden;
+    margin-top: 2rem; /* Espacio entre el card y el texto */
+}
+
+
+.seccion5 .card {
+    width: 90vw;
+    height: calc(12 / 16 * 70vw);
+    max-width: calc(16 / 9 * 70vh);
+    max-height: 70vh;
+    display: flex;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1613479/inception.jpg') center center / cover;
+    overflow: hidden;
+    margin-top: 2rem; /* Espacio entre el card y el texto */
+}
+
+.seccion5 .card-play {
+	width: 48px;
+	height: 48px;
+	position: relative;
+	z-index: 1;
+	margin: auto;
+	opacity: 0;
+	background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1613479/play.svg') center center / cover;
+	cursor: pointer;
+	transition: opacity 0.3s ease-out;
+
+}
+
+.seccion5 .card-play:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	background: #000;
+	transition: all 0.5s ease-out;
+}
+
+.seccion5 .card-video {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	background: #FFF;
+
+}
+
+.seccion5 .card-video iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.seccion5 .card:after {
+	content: '';
+	width: 250%;
+	height: 250%;
+	position: absolute;
+	top: var(--y);
+	left: var(--x);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.3), transparent);
+	transition: opacity 0.5s ease-out;
+}
+
+.seccion5 .card:hover:after,
+.seccion5 .card:hover .card-play {
+	opacity: 1;
+}
+
+.seccion5 .video-is-open:after {
+	display: none;
+}
+
+.seccion5 .video-is-open .card-play {
+	opacity: 1;
+}
+
+.seccion5 .video-is-open .card-play:after {
+	width: 2vh;
+	height: 2vh;
+	transform: translate(-50%, -50%) scale(50);
+	transition: transform 0.5s ease-out;
+}
+
+
+
+/*SECCION6*/
+.seccion6 {
+  font-family: "Poppins", sans-serif;
+  padding: 5vw; /* Ajustado a 5vw para ser relativo al ancho de la pantalla */
+  background-color: #f5f5f5;
+  color: #808080;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=- */
+/* Column Grids */
+/*-=-=-=-=-=-=-=-=-=-=-=- */
+
+.seccion6 .col_half { width: 40vw; } /* Ajustado para que sea 48% del ancho de la pantalla */
+.seccion6 .col_third { width: 32vw; }
+.seccion6 .col_fourth { width: 18vw; }
+.seccion6 .col_fifth { width: 18vw; }
+.seccion6 .col_sixth { width: 15vw; }
+.seccion6 .col_three_fourth { width: 74vw; }
+.seccion6 .col_twothird { width: 66vw; }
+
+.seccion6 .col_half, 
+.seccion6 .col_third, 
+.seccion6 .col_twothird, 
+.seccion6 .col_fourth, 
+.seccion6 .col_three_fourth, 
+.seccion6 .col_fifth {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-right: 2vw; /* Margen relativo a la pantalla */
+  margin-bottom: 2vh; /* Altura relativa a la pantalla */
+}
+
+.end { margin-right: 0 !important; }
+
+.seccion6 .wrapper {
+  width: 80vw; /* Ajustado para que sea 80% del ancho de la pantalla */
+  margin: 3vh auto; /* Márgenes relativos a la altura */
+  position: relative;
+}
+
+.seccion6 .counter {
+  background-color: #ffffff;
+  padding: 2vw 0; /* Padding relativo al ancho */
+  border-radius: 1vw; /* Radio de borde relativo al ancho */
+}
+
+.seccion6 .count-title {
+  font-size: 4vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+  font-weight: bold;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.seccion6 .count-text {
+  font-size: 1.5vw; /* Tamaño de fuente ajustado al ancho de la pantalla */
+  font-weight: normal;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+  @media (max-width: 720px) {  
+.seccion6 .count-text {
+  font-size: 3.1vw; /* Tamaño de fuente ajustado al ancho de la pantalla */
+  font-weight: normal;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  text-align: center;
+}}
+
+
+
+.seccion6 .fa-2x {
+  margin: 0 auto;
+  float: none;
+  display: table;
+  color: #4ad1e5;
+}
+
+.seccion6 h1 {
+  font-size: 3.5rem;
+  font-weight:bold;
+} 
+
+.seccion6 h3 {
+  font-size:1vw
+}
+@media screen and (max-width: 768px) {
+.seccion6 h3 {
+  font-size:5vw
+}}
+
+/* Estilos de la sección */
+.seccion7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+overflow:hidden;
+  height:70vh;
+  margin: 0 auto;
+  text-align: center;
+    font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}
+  @media (max-width: 720px) {  
+/* Estilos de la sección */
+.seccion7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+overflow:hidden;
+  height:100vh;
+  margin: 0 auto;
+  text-align: center;
+    font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}}
+
+
+.seccion7 h1 {
+  color: red;
+  font-weight: bold; /* Usamos Poppins en bold */
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  top:16vh;
+  position:relative;
+}
+
+@media screen and (max-width: 768px) {
+.seccion7 h1 {
+  color: red;
+  font-weight: bold; /* Usamos Poppins en bold */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  top:13vh;
+  position:relative;
+}
+}
+
+.seccion7 p {
+  margin-bottom: 20px;
+  position:relative;
+  top:16vh;
+  font-size:1.2rem;
+  font-weight: normal; /* Poppins normal para el párrafo */
+}
+@media screen and (max-width: 768px) {
+.seccion7 p {
+  margin-bottom: 20px;
+  position:relative;
+  top:13vh;
+  font-size:1rem;
+  font-weight: normal; /* Poppins normal para el párrafo */
+  padding:2px;
+}}
+
+/* Visibilidad inicial (todos los elementos ocultos) */
+.seccion7 h1,
+.seccion7 p,
+.seccion7 .form-group,
+.seccion7 button[type="submit"] {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cuando se activa la clase .active (visibles con animaciones) */
+.seccion7.active h1 {
+  animation: fadeInDown 1s ease forwards;
+  visibility: visible;
+}
+
+.seccion7.active p {
+  animation: fadeInDown 1s ease forwards;
+  visibility: visible;
+  animation-delay: 0.2s;
+}
+
+.seccion7.active .form-group:nth-child(1) {
+  animation: slideInLeft 1s ease forwards;
+  visibility: visible;
+  animation-delay: 0.6s;
+}
+
+.seccion7.active .form-group:nth-child(2) {
+  animation: slideInRight 1s ease forwards;
+  visibility: visible;
+  animation-delay: 0.8s;
+}
+
+.seccion7.active .form-group:nth-child(3) {
+  animation: slideInLeft 1s ease forwards;
+  visibility: visible;
+  animation-delay: 1s;
+}
+
+.seccion7.active button[type="submit"] {
+  animation: fadeInUp 1s ease forwards;
+  visibility: visible;
+  animation-delay: 1s;
+}
+
+/* Estilos del formulario */
+.seccion7 .contact-form {
+  margin-top: 5vh;
+  position: absolute;
+}
+      @media (max-width: 720px) {
+/* Estilos del formulario */
+.seccion7 .contact-form {
+  margin-top: 25vh;
+  position: absolute;
+}}
+
+.seccion7 .form-group {
+  margin-bottom: 15px;
+}
+
+.seccion7 input,
+.seccion7 textarea {
+  width: 600px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .seccion7 input,
+.seccion7 textarea {
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+  
+  
+  
+  
+}
+
+.seccion7 input:focus,
+.seccion7 textarea:focus {
+  border-color: #007bff;
+}
+
+.seccion7 input:hover,
+.seccion7 textarea:hover {
+  border-color: red; /* Cambia el borde a rojo en hover */
+}
+
+.seccion7 textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Estilos para el contenedor de botones */
+.seccion7 .button-container {
+  position:absolute;
+    display: block;
+right: 0vw;
+    margin-top: 5rem; /* Espacio superior entre el formulario y los botones */
+}
+
+  @media (max-width: 720px) {  
+/* Estilos para el contenedor de botones */
+.seccion7 .button-container {
+  position:relative;
+    display: block;
+right: 0vw;
+  margin-top: 0rem;
+
+}}
+
+
+.negative:hover {
+    background-color: darkgray; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento al hacer hover */
+}
+
+/* Estilo del botón de envío */
+.seccion7 button[type="submit"] {
+    background-color: red; /* Fondo rojo para el botón */
+    color: white;
+  right: 20vw;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: bold;
+}
+
+
+
+.seccion7 button[type="submit"]:hover {
+    background-color: darkred; /* Cambio de color al pasar el mouse */
+    transform: scale(1.5); /* Efecto de aumento al hacer hover */
+}
