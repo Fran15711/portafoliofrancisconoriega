@@ -865,12 +865,20 @@ $(document).ready(() => {
   });
 });
 
-// Función para enviar el formulario
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.seccion7 #ajax-contact');
-  if (form) { // Verifica que el formulario exista
+  const submitButton = form.querySelector('button[type="submit"]'); // Botón de enviar
+  const statusMessage = document.createElement('div'); // Contenedor para mensajes de estado
+  statusMessage.classList.add('status-message');
+  form.appendChild(statusMessage);
+
+  if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Mostrar animación de carga
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
 
       const formData = new FormData(this);
 
@@ -878,22 +886,41 @@ document.addEventListener('DOMContentLoaded', function () {
         method: 'POST',
         body: formData,
         headers: {
-          Accept: 'application/json'
-        }
+          Accept: 'application/json',
+        },
       })
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            alert('Message sent successfully!');
+            statusMessage.textContent = 'Mensaje enviado exitosamente.';
+            statusMessage.style.color = 'green';
             form.reset();
+
+            // Cambiar el botón para mostrar la palomita
+            submitButton.innerHTML = '✔ Mensaje enviado';
+            submitButton.classList.add('success');
           } else {
-            alert('Error sending message.');
-            console.log(data);
+            statusMessage.textContent = 'Hubo un error al enviar el mensaje.';
+            statusMessage.style.color = 'red';
           }
         })
         .catch(error => {
-          alert('Error sending message.');
+          statusMessage.textContent = 'Hubo un error al enviar el mensaje.';
+          statusMessage.style.color = 'red';
           console.error(error);
+        })
+        .finally(() => {
+          // Restaurar el botón después de un tiempo, si el mensaje fue enviado
+          if (submitButton.classList.contains('success')) {
+            setTimeout(() => {
+              submitButton.disabled = false;
+              submitButton.textContent = 'Enviar mensaje';
+              submitButton.classList.remove('success');
+            }, 3000); // Cambia el tiempo según tus necesidades
+          } else {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Enviar mensaje';
+          }
         });
     });
   } else {
