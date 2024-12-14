@@ -697,7 +697,7 @@ function createButton(image, link, text, textColor, id2) {
   }
 
  function openPopup(url) {
-  const isMobile = window.innerWidth < 768; // Definir como móvil si el ancho es menor a 768px
+  const isMobile = window.innerWidth < 1400; // Definir como móvil si el ancho es menor a 768px
 
   if (isMobile) {
     // En dispositivos móviles, abrir en una nueva pestaña
