@@ -266,7 +266,7 @@ height:50vh;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-   height: 20vh; /* Ajuste para pantallas pequeñas */
+   height: 25vh; /* Ajuste para pantallas pequeñas */
 }
 
 @media (max-width: 720px) {
@@ -463,8 +463,8 @@ height:50vh;
 
 .seccion2-3 h2{
   font-size:5vmin;
-  margin-top:2vmin;
-  margin-bottom:2vmin;
+  margin-top:3vmin;
+  margin-bottom:0vmin;
       transform: translateY(-8vh);
     margin-left: 4vw;
 
@@ -477,7 +477,7 @@ height:50vh;
     justify-content: center; /* Centra los botones horizontalmente */
     align-items: center; /* Centra los botones verticalmente */
     gap: 1rem; /* Espacio entre los botones */
-    margin-top: 2rem; /* Margen superior para separación del título */
+    margin-top: 0rem; /* Margen superior para separación del título */
 
 }
 
@@ -498,7 +498,7 @@ height:50vh;
     justify-content: center; /* Centra los botones horizontalmente */
     justify-items: center; /* Centra los botones verticalmente */
     gap: 1rem; /* Espacio entre los botones */
-    margin-top: 2rem; /* Margen superior para separación del título */
+    margin-top: 0rem; /* Margen superior para separación del título */
       margin-bottom:2rem;
 }
   
@@ -613,10 +613,10 @@ height:50vh;
 .seccion2-3 .shiny-button {
     margin: 1rem;
     padding: 1.3rem;
-    width: 15vmin; /* Cambiado a 100px para un botón cuadrado */
-    height: 15vmin; /* Cambiado a 100px para un botón cuadrado */
+    width: 20vmin; /* Cambiado a 100px para un botón cuadrado */
+    height: 20vmin; /* Cambiado a 100px para un botón cuadrado */
     position: relative;
-    font-size: 1.5vmin;
+    font-size: 1.6vmin;
     z-index: 1;
     border-radius: 0.8rem;
     overflow: hidden;
@@ -1579,7 +1579,7 @@ width:72vw
 } 
 
 .seccion6 h3 {
-  font-size:1vw
+  font-size:2vw
 }
 @media screen and (max-width: 768px) {
 .seccion6 h3 {
@@ -1602,6 +1602,24 @@ overflow:hidden;
   color: #333;
   text-align: center;
 }
+
+ @media (max-width: 1400px) {  
+/* Estilos de la sección */
+.seccion7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+overflow:hidden;
+  height:100vh;
+  margin: 0 auto;
+  text-align: center;
+    font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}}
   @media (max-width: 720px) {  
 /* Estilos de la sección */
 .seccion7 {
@@ -1814,7 +1832,14 @@ overflow:hidden;
 right: 0vw;
     margin-top: 5rem; /* Espacio superior entre el formulario y los botones */
 }
-
+  @media (max-width: 1400px) {  
+/* Estilos para el contenedor de botones */
+.seccion7 .button-container {
+   position:absolute;
+    display: block;
+right: 0vw;
+    margin-top: 2rem; /* Espacio superior entre el formulario y los botones */
+}}
   @media (max-width: 720px) {  
 /* Estilos para el contenedor de botones */
 .seccion7 .button-container {
