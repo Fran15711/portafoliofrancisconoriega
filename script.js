@@ -766,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         // Atenuar hexágonos no relacionados
         img.style.filter = 'grayscale(100%)';
-        img.style.opacity = '0.5';
+        img.style.opacity = '0.1';
       }
     });
   });
