@@ -130,8 +130,6 @@
 
 
 
-
-
 <!-- Sección 2 -->
 <section class="seccion2" id="seccion2">
     <ul class='slider'>
@@ -146,6 +144,7 @@
             <div class='content'>
                 <h2 class='title'>Mex7 Boots</h2>
                 <p class='description'>Encargado de Marketing: estrategia, branding, redes, SEO, diseño web, ads, e-commerce (shopify), prospección y gestión de clientes, ferias de calzado.</p>
+                <a href="https://fran15711.github.io/cartasrecomendacion/" class="btn-recomendacion" onclick="openPopup(event, this.href)">Ver carta de recomendación</a>
             </div>
         </li>
         <li class='item' style="background-image: url('https://raw.githubusercontent.com/Fran15711/backgroundsseccion3/refs/heads/main/mercaback.jpg')">
@@ -154,6 +153,7 @@
                 <p class='description'>
                     Creación de contenido para 15+ marcas, branding, SEO, TikTok, Reels, guiones, KPIs, naming, Facebook. Cursos: IA y Copywriting.
                 </p>
+                <a href="https://fran15711.github.io/cartarecomendacionmdr/" class="btn-recomendacion" onclick="openPopup(event, this.href)">Ver carta de recomendación</a>
             </div>
         </li>
         <li class='item' style="background-image: url('https://raw.githubusercontent.com/Fran15711/backgroundsseccion3/refs/heads/main/evaback2.jpg')">
@@ -162,6 +162,7 @@
                 <p class='description'>
                     Estrategia basada en "They Ask, You Answer", confianza con clientes, SEO, contenido personalizado, videos, Hubspot, blogs, redes sociales, y activaciones.
                 </p>
+                <a href="https://fran15711.github.io/cartarecomendacionevacolors/" class="btn-recomendacion" onclick="openPopup(event, this.href)">Ver carta de recomendación</a>
             </div>
         </li>
     </ul>
@@ -171,9 +172,79 @@
     </nav>
 </section>
 
+<!-- Script para el Popup -->
+<script>
+function openPopup(event, url) {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    const isMobile = window.innerWidth < 1400; // Definir como móvil si el ancho es menor a 1400px
+
+    if (isMobile) {
+        // En dispositivos móviles, abrir en una nueva pestaña
+        window.open(url, '_blank');
+    } else {
+        const popup = document.createElement('div');
+        popup.style.position = 'fixed';
+        popup.style.top = '50%';
+        popup.style.left = '50%';
+        popup.style.transform = 'translate(-50%, -50%)';
+        popup.style.width = '70vw';
+        popup.style.height = '70vh';
+        popup.style.backgroundColor = 'white';
+        popup.style.borderRadius = '8px';
+        popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+        popup.style.zIndex = '1000';
+
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        popup.appendChild(iframe);
+
+        const closeButton = document.createElement('button');
+        closeButton.textContent = 'Cerrar';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '10px';
+        closeButton.style.right = '10px';
+        closeButton.style.border = 'none';
+        closeButton.style.background = 'red';
+        closeButton.style.color = 'white';
+        closeButton.style.padding = '5px 10px';
+        closeButton.style.borderRadius = '4px';
+        closeButton.style.cursor = 'pointer';
+        closeButton.addEventListener('click', () => {
+            popup.remove();
+        });
+
+        popup.appendChild(closeButton);
+        document.body.appendChild(popup);
+    }
+}
+</script>
+
+<!-- Iconos -->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+<!-- Estilos para el botón -->
+<style>
+    .btn-recomendacion {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 16px;
+        background-color: #ffffff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn-recomendacion:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+</style>
 
 
 
