@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //SECCION3
 document.addEventListener('DOMContentLoaded', () => {
-  const defaultImage = '#';
+  const defaultImage = 'https://raw.githubusercontent.com/Fran15711/prueba1/refs/heads/main/blanco.jpg';
   const hexData = [
     {
       buttons: [
