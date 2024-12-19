@@ -471,14 +471,14 @@ document.addEventListener('DOMContentLoaded', () => {
       createHexButtons(hexData[index].buttons, hexData[index].textColor);
     });
   });
-
+//FILTRO TRABAJOS
   filtroId2.addEventListener('change', () => {
     const selectedId2 = filtroId2.value.toLowerCase();
     resetHexagonStyles();
 
     currentButtons.forEach(button => {
       const isMatching = button.dataset.id2.toLowerCase() === selectedId2 || selectedId2 === '';
-      button.style.opacity = isMatching ? '1' : '0.3';
+      button.style.opacity = isMatching ? '1' : '0.1';
       button.style.filter = isMatching ? 'none' : 'grayscale(100%)';
     });
 
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.style.opacity = '1';
     });
   }
-
+//BACKGROUND
   function changeImageWithSlider(newImageSrc) {
     const newImage = document.createElement('img');
     newImage.src = newImageSrc;
@@ -533,9 +533,13 @@ document.addEventListener('DOMContentLoaded', () => {
     pElement.style.color = color;
   }
 
-  function createHexButtons(buttons, textColor) {
-    currentButtons = [];
+function changeTextColor(color) {
+  h2Element.style.color = color;
+  pElement.style.color = color;
+}
 
+function createHexButtons(buttons, textColor) {
+  currentButtons = [];
   const isMobile = window.innerWidth < 450;
 
   buttons.forEach((buttonData, i) => {
@@ -543,29 +547,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const offsetX = isMobile ? (i % 2 === 0 ? -45 : 30) : (i % 2 === 0 ? -35 : 30);
     const offsetY = isMobile ? (i < 2 ? 15 : 65) : (i < 2 ? -5 : 25);
 
-    // Crear el botón con las posiciones ajustadas
-    const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
-    positionButtons(button, offsetX, offsetY);
-    currentButtons.push(button);
-
-      setTimeout(() => {
-        button.style.opacity = '1';
-        button.style.transform = 'scale(1)';
-      }, i * 50);
-    });
-
-    const selectedId2 = filtroId2.value.toLowerCase();
-    currentButtons.forEach(button => {
-      const isMatching = button.dataset.id2.toLowerCase() === selectedId2 || selectedId2 === '';
-      button.style.opacity = isMatching ? '1' : '0.1';
-      button.style.filter = isMatching ? 'none' : 'grayscale(100%)';
-    });
+// Crear el botón con las posiciones ajustadas
+const button = createButton(buttonData.image, buttonData.link, buttonData.text, textColor, buttonData.id2);
+positionButtons(button, offsetX, offsetY);
+currentButtons.push(button);
+    
+// Añadir el evento de clic para cambiar la opacidad si no hace match
+button.addEventListener('click', () => {
+  const isMatching = button.dataset.id2.toLowerCase() === filtroId2.value.toLowerCase() || filtroId2.value === '';
+        if (isMatching) {
+    // Si hace match, establecer opacidad completa
+    button.style.opacity = '1'; 
+    button.style.filter = 'none'; // Eliminar filtro de escala de grises
+  } else {
+    // Si no hace match, establecer opacidad reducida y aplicar escala de grises
+    button.style.opacity = '0.3'; 
+    button.style.filter = 'grayscale(100%)'; 
   }
+});
 
-  function removeButtons() {
-    currentButtons.forEach(button => button.remove());
-    currentButtons = [];
-  }
+
+  });
+
+// Aplica los filtros y la opacidad inicial al crear los botones
+const selectedId2 = filtroId2.value.toLowerCase();
+currentButtons.forEach(button => {
+  const isMatching = button.dataset.id2.toLowerCase() === selectedId2 || selectedId2 === '';
+  if (isMatching) {
+    // Si hace match, aplicar opacidad completa y quitar el filtro
+    button.style.opacity = '1'; // Opacidad completa
+    button.style.filter = 'none'; // Eliminar filtro de escala de grises
+  } else {
+    // Si no hace match, aplicar opacidad reducida y filtro de escala de grises
+    button.style.opacity = '0.1'; // Opacidad reducida
+    button.style.filter = 'grayscale(100%)'; // Escala de grises // Escala de grises
+    }
+  });
+}
+
+function removeButtons() {
+  currentButtons.forEach(button => button.remove());
+  currentButtons = [];
+}
+
 
   function changeDatatext(newText, textColor) {
     if (currentDatatextElement) {
