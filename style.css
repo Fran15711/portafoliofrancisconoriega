@@ -1407,7 +1407,7 @@ width:72vw
     position: relative;
     border-radius: 6px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1613479/inception.jpg') center center / cover;
+    background: url('https://raw.githubusercontent.com/Fran15711/portafoliofrancisconoriega/refs/heads/main/Mi.jpg') center center / cover;
     overflow: hidden;
     margin-top: 2rem; /* Espacio entre el card y el texto */
 }
