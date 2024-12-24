@@ -1352,7 +1352,7 @@ width:72vw
 /*SECCION5*/
 .seccion5 {}
 .seccion5 {
-    display: none;
+    display: flex; /*Cambiar a flex para verlo*/
     flex-direction: column; /* Cambia a columna para apilar elementos verticalmente */
     justify-content: center; /* Centra todo el contenido verticalmente */
     align-items: center;     /* Centra todo el contenido horizontalmente */
