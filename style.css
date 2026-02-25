@@ -1347,7 +1347,309 @@ width:72vw
 }
 
 
+/* =========================================================
+   GALGAX — CSS DEFINITIVO CORREGIDO
+   ========================================================= */
 
+.galgaX{
+  font-family:"Poppins",sans-serif;
+  width:100%;
+}
+
+/* ================= HERO ================= */
+
+.galgaX__hero{
+  background:linear-gradient(135deg,#050c1f,#0b1f3f 60%,#092857);
+  color:#ffffff;
+  padding:70px 20px 90px;
+}
+
+.galgaX__heroInner{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.galgaX__brand{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.galgaX__logo{
+  width:55px;
+}
+
+.galgaX__title{
+  font-size:48px;
+  font-weight:900;
+  line-height:1.1;
+}
+
+.galgaX__subtitle{
+  margin-top:10px;
+  font-size:18px;
+  opacity:.85;
+}
+
+/* Badges (clickeables) */
+
+.galgaX__badges{
+  margin-top:25px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.galgaX__badge{
+  padding:9px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+
+.galgaX__badge:hover{
+  background:rgba(124,58,237,.35);
+  border-color:#7c3aed;
+}
+
+/* Hero Cards (SIN hover porque no son clickeables) */
+
+.galgaX__cards{
+  margin-top:35px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.galgaX__card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;
+  padding:24px;
+}
+
+.galgaX__card h3{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-bottom:10px;
+  opacity:.8;
+}
+
+.galgaX__card p{
+  font-size:15px;
+  line-height:1.6;
+}
+
+.galgaX__muted{
+  opacity:.75;
+  margin-top:10px;
+}
+
+/* ================= CONTENT ================= */
+
+.galgaX__content{
+  background:transparent;
+  padding:80px 20px;
+  color:#0b1220;
+}
+
+.galgaX__sectionHead{
+  max-width:1200px;
+  margin:0 auto 35px;
+}
+
+.galgaX__h3{
+  font-size:36px;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.galgaX__p{
+  color:#5a6475;
+}
+
+/* ================= KPIS ================= */
+
+.galgaX__kpis{
+  max-width:1200px;
+  margin:0 auto 60px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.galgaX__kpi{
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:22px;
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.galgaX__kpiTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+.galgaX__kpiLabel{
+  font-weight:800;
+  font-size:16px;
+}
+
+.galgaX__kpiChip{
+  background:rgba(31,59,138,.12);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:700;
+  color:#1f3b8a;
+}
+
+.galgaX__kpiValue{
+  margin:20px 0 15px;
+}
+
+.galgaX__count{
+  font-size:40px;
+  font-weight:900;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.galgaX__bar{
+  height:8px;
+  background:rgba(0,0,0,.08);
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.galgaX__bar span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#1f3b8a,#7c3aed);
+  border-radius:999px;
+}
+
+/* ================= TABS ================= */
+
+.galgaX__tabs{
+  max-width:1200px;
+  margin:0 auto 25px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.galgaX__tab{
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.15);
+  background:#ffffff;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.galgaX__tab:hover{
+  border-color:#7c3aed;
+  box-shadow:0 8px 20px rgba(124,58,237,.25);
+}
+
+.galgaX__tab.is-active{
+  background:linear-gradient(90deg,#1f3b8a,#7c3aed);
+  color:#ffffff;
+  border:none;
+}
+
+.galgaX__panel{
+  display:none;
+}
+
+.galgaX__panel.is-active{
+  display:block;
+}
+
+/* ================= BOTONES REPORTES (LO IMPORTANTE) ================= */
+
+.galgaX__gridBtns{
+  max-width:1200px;
+  margin:0 auto 50px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.galgaX__btn{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:20px;
+  background:#ffffff;
+  border-radius:22px;
+  border:1px solid rgba(0,0,0,.08);
+  text-decoration:none;
+  color:#0b1220;
+  font-weight:800;
+  font-size:16px;
+  transition:all .25s ease;
+  cursor:pointer;
+}
+
+.galgaX__btn:hover{
+  transform:translateY(-4px);
+  border-color:#7c3aed;
+  box-shadow:0 20px 45px rgba(124,58,237,.25);
+}
+
+.galgaX__btn:active{
+  transform:translateY(0px);
+  box-shadow:0 8px 20px rgba(124,58,237,.2);
+}
+
+.galgaX__btnIcon{
+  font-size:22px;
+}
+
+/* ================= HIGHLIGHTS ================= */
+
+.galgaX__highlights{
+  max-width:1200px;
+  margin:0 auto;
+  background:#ffffff;
+  padding:28px;
+  border-radius:20px;
+  border:1px solid rgba(0,0,0,.08);
+}
+
+.galgaX__list{
+  margin-top:15px;
+  padding-left:20px;
+  color:#5a6475;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+  .galgaX__cards{grid-template-columns:1fr;}
+  .galgaX__kpis{grid-template-columns:1fr 1fr;}
+  .galgaX__gridBtns{grid-template-columns:1fr;}
+}
+
+@media(max-width:600px){
+  .galgaX__kpis{grid-template-columns:1fr;}
+  .galgaX__title{font-size:34px;}
+}
 
 /*SECCION5*/
 .seccion5 {}
