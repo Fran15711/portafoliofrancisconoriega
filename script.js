@@ -968,3 +968,278 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Sección no encontrada.');
   }
 });
+
+//SECCION GALGA MAQUINARIA//
+
+/* =========================================================
+   GALGAX JS (AISLADO)
+   - Tabs accesibles
+   - openPopup desktop / nueva pestaña móvil
+   - Contadores KPI (con formato currency/percent/multiple)
+   - Barras animadas
+   - Tilt ligero (sin librerías)
+   ========================================================= */
+
+(() => {
+  const root = document.querySelector(".galgaX");
+  if (!root) return;
+
+  /* -----------------------------
+     Helpers
+  ------------------------------*/
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const isMobile = () =>
+    window.matchMedia("(max-width: 820px)").matches ||
+    /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  function clamp(n, min, max) {
+    return Math.max(min, Math.min(max, n));
+  }
+
+  /* -----------------------------
+     Popup (desktop) / new tab (mobile)
+     Usa tu onclick="openPopup(event,this.href)" o data-popup
+  ------------------------------*/
+  window.openPopup = function (ev, url) {
+    if (ev) ev.preventDefault();
+    if (!url) return;
+
+    if (isMobile()) {
+      window.open(url, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    const w = Math.min(1100, Math.floor(window.innerWidth * 0.86));
+    const h = Math.min(780, Math.floor(window.innerHeight * 0.86));
+    const left = Math.floor((window.screenX || window.screenLeft || 0) + (window.innerWidth - w) / 2);
+    const top = Math.floor((window.screenY || window.screenTop || 0) + (window.innerHeight - h) / 2);
+
+    const features = `popup=yes,width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=yes`;
+    const win = window.open(url, "galgaPopup", features);
+    if (win) win.focus();
+    else window.open(url, "_blank", "noopener,noreferrer"); // fallback si el navegador bloquea popups
+  };
+
+  // Extra: si pones links con data-popup="true" y href normal
+  root.querySelectorAll('a[data-popup="true"]').forEach((a) => {
+    a.addEventListener("click", (e) => window.openPopup(e, a.href));
+  });
+
+  /* -----------------------------
+     Tabs
+  ------------------------------*/
+  const tabs = Array.from(root.querySelectorAll(".galgaX__tab"));
+  const panels = Array.from(root.querySelectorAll(".galgaX__panel"));
+
+  function activateTab(tab) {
+    const targetId = tab.getAttribute("data-tab");
+    if (!targetId) return;
+
+    tabs.forEach((t) => t.classList.toggle("is-active", t === tab));
+    panels.forEach((p) => p.classList.toggle("is-active", p.id === targetId));
+
+    // ARIA
+    tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+    panels.forEach((p) => p.setAttribute("aria-hidden", String(p.id !== targetId)));
+  }
+
+  if (tabs.length && panels.length) {
+    // Init ARIA roles si no existen
+    const tabList = root.querySelector(".galgaX__tabs");
+    if (tabList) tabList.setAttribute("role", "tablist");
+
+    tabs.forEach((t) => {
+      t.setAttribute("role", "tab");
+      t.setAttribute("tabindex", t.classList.contains("is-active") ? "0" : "-1");
+      t.setAttribute("aria-selected", t.classList.contains("is-active") ? "true" : "false");
+      const id = t.getAttribute("data-tab");
+      if (id) t.setAttribute("aria-controls", id);
+
+      t.addEventListener("click", () => {
+        activateTab(t);
+        tabs.forEach((x) => x.setAttribute("tabindex", x === t ? "0" : "-1"));
+        t.focus({ preventScroll: true });
+      });
+
+      // Navegación con teclado
+      t.addEventListener("keydown", (e) => {
+        const idx = tabs.indexOf(t);
+        if (idx < 0) return;
+
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+          e.preventDefault();
+          const dir = e.key === "ArrowRight" ? 1 : -1;
+          const next = tabs[(idx + dir + tabs.length) % tabs.length];
+          next.click();
+        }
+      });
+    });
+
+    panels.forEach((p) => {
+      p.setAttribute("role", "tabpanel");
+      p.setAttribute("aria-hidden", p.classList.contains("is-active") ? "false" : "true");
+    });
+
+    // Asegura un activo
+    const active = tabs.find((t) => t.classList.contains("is-active")) || tabs[0];
+    activateTab(active);
+  }
+
+  /* -----------------------------
+     KPI formatters
+     data-format:
+       - currency (usa data-currency="MXN" y data-compact="1")
+       - percent
+       - multiple
+       - number (default)
+     data-suffix opcional
+  ------------------------------*/
+  function formatValue(value, el) {
+    const format = (el.getAttribute("data-format") || "number").toLowerCase();
+    const suffix = el.getAttribute("data-suffix") || "";
+    const compact = el.getAttribute("data-compact") === "1";
+    const currency = el.getAttribute("data-currency") || "MXN";
+
+    const locale = "es-MX";
+
+    if (format === "currency") {
+      const opts = {
+        style: "currency",
+        currency,
+        maximumFractionDigits: 1,
+        minimumFractionDigits: 0,
+        currencyDisplay: "narrowSymbol",
+      };
+      if (compact) {
+        // Formato compacto tipo $26.1 M
+        const abs = Math.abs(value);
+        if (abs >= 1e9) return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(value / 1e9)} B ${currency}`;
+        if (abs >= 1e6) return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(value / 1e6)} M ${currency}`;
+        if (abs >= 1e3) return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(value / 1e3)} K ${currency}`;
+        return new Intl.NumberFormat(locale, opts).format(value);
+      }
+      return new Intl.NumberFormat(locale, opts).format(value);
+    }
+
+    if (format === "percent") {
+      // Aquí el value ya viene como 1226 (no 12.26)
+      return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(value)}${suffix || "%"}`;
+    }
+
+    if (format === "multiple") {
+      return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(value)}${suffix || "x"}`;
+    }
+
+    // number default
+    return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(value)}${suffix}`;
+  }
+
+  function animateCount(el, to, duration = 1100) {
+    const from = 0;
+    const start = performance.now();
+
+    function tick(now) {
+      const t = clamp((now - start) / duration, 0, 1);
+      // easing (easeOutCubic)
+      const eased = 1 - Math.pow(1 - t, 3);
+      const current = from + (to - from) * eased;
+
+      el.textContent = formatValue(current, el);
+
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = formatValue(to, el);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  /* -----------------------------
+     Bars animation
+  ------------------------------*/
+  function animateBar(bar) {
+    const span = bar.querySelector("span");
+    if (!span) return;
+    const pct = clamp(parseFloat(bar.getAttribute("data-bar") || "0"), 0, 100);
+    // si ya se animó no repetir
+    if (bar.dataset.animated === "1") return;
+    bar.dataset.animated = "1";
+
+    // arranca en 0, anima a %
+    span.style.width = "0%";
+    requestAnimationFrame(() => {
+      span.style.transition = prefersReduced ? "none" : "width 900ms ease";
+      span.style.width = `${pct}%`;
+    });
+  }
+
+  /* -----------------------------
+     Observer: dispara animaciones al entrar
+  ------------------------------*/
+  const kpiEls = Array.from(root.querySelectorAll(".galgaX__count"));
+  const barEls = Array.from(root.querySelectorAll(".galgaX__bar"));
+
+  if (!kpiEls.length && !barEls.length) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        // Contadores
+        if (entry.target.classList.contains("galgaX__count")) {
+          const el = entry.target;
+          if (el.dataset.animated === "1") return;
+          el.dataset.animated = "1";
+          const to = parseFloat(el.getAttribute("data-to") || "0");
+          if (prefersReduced) el.textContent = formatValue(to, el);
+          else animateCount(el, to);
+        }
+
+        // Barras
+        if (entry.target.classList.contains("galgaX__bar")) {
+          animateBar(entry.target);
+        }
+
+        io.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  kpiEls.forEach((el) => io.observe(el));
+  barEls.forEach((el) => io.observe(el));
+
+  /* -----------------------------
+     Tilt ligero (sin librerías)
+     Activa solo si el elemento tiene data-tilt
+  ------------------------------*/
+  if (!prefersReduced) {
+    const tiltEls = Array.from(root.querySelectorAll("[data-tilt]"));
+
+    tiltEls.forEach((card) => {
+      let raf = null;
+
+      function onMove(e) {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;  // 0..1
+        const y = (e.clientY - rect.top) / rect.height; // 0..1
+        const rx = (y - 0.5) * -8; // rotateX
+        const ry = (x - 0.5) * 10; // rotateY
+
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+        });
+      }
+
+      function onLeave() {
+        if (raf) cancelAnimationFrame(raf);
+        card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+      }
+
+      card.addEventListener("mousemove", onMove);
+      card.addEventListener("mouseleave", onLeave);
+    });
+  }
+})();
